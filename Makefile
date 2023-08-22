@@ -2,7 +2,7 @@
 
 target = mkpass
 
-PREFIX  = /usr/local/bin
+PREFIX  = /usr/local
 DPREFIX = ${DESTDIR}${PREFIX}
 
 all: ${target}
