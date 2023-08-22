@@ -1,0 +1,61 @@
+.Dd $Mdocdate: August 22 2023 $
+.Dt MKPASS 1
+.Os
+.Sh NAME
+.Nm mkpass
+.Nd make a password
+.Sh SYNOPSIS
+.Nm
+.Op Fl n
+.Op Fl l Ar length
+.Op Ar chars
+.Sh DESCRIPTION
+The
+.Nm
+utility allows you to easily create randomly\-generated passwords from the
+command\-line.
+By default,
+.Nm
+generates a 64\-character long password of printable characters.
+If specified, the generated password will only contain characters found in
+.Ar chars .
+You may use
+.Xr tr 1
+range syntax, as shown in the
+.Sx EXAMPLES
+section.
+.Pp
+The options are as follows:
+.Bl -tag width Ds
+.It Fl n
+Do not print a trailing newline after the generated password.
+.It Fl l Ar length
+Generate a password
+.Ar length
+characters in length.
+.El
+.Sh EXIT STATUS
+.Ex -std
+.Sh EXAMPLES
+.Pp
+Generate a password:
+.Pp
+.Dl $ mkpass
+.Pp
+Generate a password with a length of 40:
+.Pp
+.Dl $ mkpass -l 40
+.Pp
+Generate an alphanumeric password:
+.Pp
+.Dl $ mkpass '[:alnum:]'
+.Pp
+Generate a password containing only the lowercase letters of the latin alphabet:
+.Pp
+.Dl $ mkpass a-z
+.Sh SEE ALSO
+.Xr head 1 ,
+.Xr totp 1 ,
+.Xr tr 1
+.Sh AUTHORS
+.An Thomas Voss Aq Mt mail@thomasvoss.com
