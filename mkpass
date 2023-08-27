@@ -2,7 +2,8 @@
 
 set -e
 
-usage() {
+usage()
+{
 	echo "Usage: ${0##*/} [-l length] [chars]" >&2
 	exit 1
 }
